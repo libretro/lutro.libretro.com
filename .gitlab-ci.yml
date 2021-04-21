@@ -1,0 +1,19 @@
+stages:
+  - deploy
+
+deploy-lutro:
+  stage: deploy
+  image: $CI_SERVER_HOST:5050/libretro-infrastructure/libretro-build-amd64-ubuntu:latest
+  before_script:
+    - 'which ssh-agent || ( apt-get update && apt-get install openssh-client -y )'
+    - mkdir -p /root/.ssh
+    - chmod 700 /root/.ssh
+    - eval $(ssh-agent -s)
+    - ssh-keyscan -H $WEB_DEPLOY_TARGET > /root/.ssh/known_hosts
+    - chmod 644 /root/.ssh/known_hosts
+    - ssh-add <(echo "$WEB_DEPLOY_KEY" | base64 -d)
+    - rm -fr ./.git*
+  script:
+    - rsync -a --delete $(pwd)/ ${WEB_DEPLOY_USER}@${WEB_DEPLOY_TARGET}:/var/www/html/
+    - ssh ${WEB_DEPLOY_USER}@${WEB_DEPLOY_TARGET} "chown -R $WEB_DEPLOY_USER:$WEB_DEPLOY_USER /var/www/html/"
+
