@@ -1,0 +1,128 @@
+/* General ------------------------------------------------------------------ */
+
+body {
+  color: #292929;
+}
+
+h1 {
+  color: #94477d;
+  font-family: 'Menlo', monospace;
+}
+
+h2 {
+  color: #94477d;
+  font-weight: 400;
+  font-size: 40px;
+  margin-bottom: 1em;
+}
+
+h3, h4 {
+  color: #6b9941;
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a, a:hover {
+  color: #94477d;
+}
+
+/* Top Nav ------------------------------------------------------------------ */
+
+.topnav {
+  background: #94477d;
+  padding: 8px 0;
+}
+
+.topnav a {
+  color: white;
+}
+
+/* Header ------------------------------------------------------------------- */
+
+header {
+  padding-top: 100px;
+}
+
+header h1, header p {
+  font-family: 'Menlo', monospace;
+}
+
+.download {
+  margin-top: 30px;
+  background: #f4f4f4;
+  padding: 30px;
+}
+
+.download ul {
+  list-style: square;
+  padding-left: 18px;
+  color: #6b9941;
+}
+
+/* About -------------------------------------------------------------------- */
+
+.about {
+  padding: 50px 0;
+}
+
+/* Quick Start -------------------------------------------------------------- */
+
+.quickstart {
+  background: #f4f4f4;
+  padding: 50px 0;
+}
+
+.quickstart pre {
+  background: #292929;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+/* Showcase ----------------------------------------------------------------- */
+
+.showcase {
+  background: white;
+  padding: 50px 0;
+}
+
+.showcase .screenshot {
+  border-radius: 8px;
+  margin: 12px 0;
+  width: 100%;
+  border: 3px solid #f4f4f4;
+}
+
+.showcase a:hover .screenshot {
+  border: 3px solid #94477d;
+}
+
+/* FAQ ---------------------------------------------------------------------- */
+
+.faq {
+  background: #f4f4f4;
+  padding: 50px 0;
+}
+
+.faq h3 {
+  margin-top: 45px;
+  margin-bottom: 25px;
+}
+
+/* Footer ------------------------------------------------------------------- */
+
+footer {
+  background: #292929;
+  padding: 16px 0;
+  color: white;
+}
+
+footer a {
+  color: #6b9941;
+}

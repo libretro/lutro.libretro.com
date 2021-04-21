@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="https://lutro.libretro.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Lutro - A portable game engine for retro games</title>
+  <meta name="description" content="Lutro is a small game engine inspired by love2d. It's basically a subset of the love2d API targeting the libretro ecosystem. Unlike its big brother love2d, lutro is software rendered to be able to run games on platforms without a GPU.">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div>
+    <!-- Top Nav -->
+    <div class="topnav fixed-top">
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="#">Lutro</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#quickstart">Quick start</a></li>
+          <li class="nav-item"><a class="nav-link" href="#showcase">Showcase</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/libretro/libretro-lutro/wiki">Doc↗</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/libretro/libretro-lutro">Github↗</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://discord.gg/YXYSEQD">Discord↗</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <h1>Lutro</h1>
+        <p>A 2D game engine for libretro</p>
+
+        <div class="download">
+
+          <h4>Supported platforms</h4>
+
+          <div class="row">
+
+            <div class="col">
+              <h5>Windows</h5>
+
+              <ul>
+                <li><a href="https://buildbot.libretro.com/nightly/windows/x86_64/latest/lutro_libretro.dll.zip">Windows x86_64</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/windows/x86/latest/lutro_libretro.dll.zip">Windows x86</a></li>
+                
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>Linux</h5>
+
+              <ul>
+                <li><a href="https://buildbot.libretro.com/nightly/linux/x86_64/latest/lutro_libretro.so.zip">Linux x86_64</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/linux/x86/latest/lutro_libretro.so.zip">Linux x86</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/linux/armv7-neon-hf/latest/lutro_libretro.so.zip">Linux armv7</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>Android</h5>
+
+              <ul>
+                <li><a href="https://buildbot.libretro.com/nightly/android/latest/armeabi-v7a/lutro_libretro_android.so.zip">Android armv7</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/android/latest/arm64-v8a/lutro_libretro_android.so.zip">Android arm64</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/android/latest/x86_64/lutro_libretro_android.so.zip">Android x86_64</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/android/latest/x86/lutro_libretro_android.so.zip">Android x86</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>Apple</h5>
+
+              <ul>
+                <li><a href="https://buildbot.libretro.com/nightly/apple/osx/x86_64/latest/lutro_libretro.dylib.zip">MacOS x86_64</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/apple/osx/arm64/latest/lutro_libretro.dylib.zip">MacOS arm64</a></li>
+              </ul>
+
+              <ul>
+                <li><a href="https://buildbot.libretro.com/nightly/apple/ios/latest/lutro_libretro_ios.dylib.zip">iOS</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/apple/ios9/latest/lutro_libretro_ios.dylib.zip">iOS9</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/apple/ios-arm64/latest/lutro_libretro_ios.dylib.zip">iOS arm64</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>Nintendo</h5>
+
+              <ul>
+                <li><a href="https://buildbot.libretro.com/nightly/nintendo/3ds/latest/3dsx/lutro_libretro.3dsx.zip">3DS (3DSX)</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/nintendo/3ds/latest/cia/lutro_libretro.cia.zip">3DS (CIA)</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/nintendo/ngc/latest/lutro_libretro_ngc.dol.zip">GameCube</a></li>
+                <li><a href="https://buildbot.libretro.com/nightly/nintendo/wii/latest/lutro_libretro_wii.dol.zip">Wii</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- About -->
+  <a id="about"></a>
+  <div class="about">
+    <div class="container">
+
+      <h4>What is Lutro?</h4>
+
+      <p>Lutro is a 2D game framework that aims for simplicity and extreme portability.</p>
+      <p>Using lutro, you can develop any kind of 2D retro games, like NES or Genesis games, and run them on a wide range of platforms through RetroArch.</p>
+      <p>Lutro makes it easy to write games by using Lua and following the love2d API.</p>
+      <p>Portability is achieved through the libretro API: Lutro is just loaded as a plugin in a frontend like RetroArch which takes care of display, audio and inputs.</p>
+    </div>
+  </div>  
+
+  <!-- Quick Start -->
+  <a id="quickstart"></a>
+  <div class="quickstart">
+    <div class="container">
+
+      <h2>Quick Start</h2>
+
+      <p>Lutro follows the love2d API. If you are already familiar with this framework, it should be easy to get started.</p>
+
+      <h4>Drawing text</h4>
+      
+      <code>
+<pre>function love.load()
+  font = love.graphics.newImageFont("font.png", "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+  love.graphics.setFont(font)
+end
+
+function love.draw()
+  love.graphics.print("HELLO 123", 16, 32)
+end</pre>
+      </code>
+
+      <h4>Drawing an image</h4>
+      
+      <code>
+<pre>function love.load()
+  whale = love.graphics.newImage("whale.png")
+end
+
+function love.draw()
+  love.graphics.draw(whale, 32, 32)
+end</pre>
+      </code>
+
+      <h4>Playing a sound</h4>
+      
+      <code>
+<pre>function love.load()
+  sound = love.audio.newSource("music.ogg", "stream")
+  love.audio.play(sound)
+end</pre>
+      </code>
+
+      <p>You can also read the <a href="https://github.com/libretro/libretro-lutro#sample-games">sample games</a> if you prefer to learn by example.</p>
+
+    </div>
+  </div>  
+
+  <!-- Showcase -->
+  <a id="showcase"></a>
+  <div class="showcase">
+    <div class="container">
+
+      <h2>Showcase</h2>
+
+      <p>These are some examples of what kind of games you can create with Lutro:</p>
+
+      <div class="row">
+        <div class="col-3"><a href=""><img class="screenshot" src="bobble.png" alt="Bobble" /></a></div>
+        <div class="col-3"><a href="https://github.com/kivutar/lutro-spaceship"><img class="screenshot" src="spaceship.png" alt="Spaceship" /></a></div>
+        <div class="col-3"><a href=""><img class="screenshot" src="vespa.png" alt="Vespa" /></a></div>
+        <div class="col-3"><a href=""><img class="screenshot" src="deepdungeon3.png" alt="Deep Dungeon 3" /></a></div>
+        <div class="col-3"><a href="https://github.com/libretro/lutro-tetris"><img class="screenshot" src="tetris.png" alt="Tetris" /></a></div>
+        <div class="col-6"><a href="https://github.com/libretro/lutro-iyfct"><img class="screenshot" src="iyfct2.png" alt="" /></a></div>
+        <div class="col-3"><a href="https://github.com/libretro/lutro-sienna"><img class="screenshot" src="sienna3.png" alt="Sienna 3" /></a></div>
+        <div class="col-3"><a href="https://github.com/libretro/lutro-platformer"><img class="screenshot" src="platformer.png" alt="Platformer" /></a></div>
+        <div class="col-3"><a href=""><img class="screenshot" src="bomberman.png" alt="Bomberman" /></a></div>
+        <div class="col-3"><a href="https://github.com/libretro/lutro-pong"><img class="screenshot" src="pong.png" alt="Pong" /></a></div>
+        <div class="col-3"><a href="https://github.com/libretro/lutro-snake"><img class="screenshot" src="snake.png" alt="Snake" /></a></div>
+      </div>
+    </div>
+  </div>  
+
+  <!-- FAQ -->
+  <a id="faq"></a>
+  <div class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Why not using love2d directly?</h3>
+      <p>Lutro is more portable, you can run games on all the usual platforms, but also on some old game consoles and the web browser.</p>
+
+      <h3>Why not simply porting love2d to libretro?</h3>
+      <p>We wanted a software rendered version to target some platforms without a GPU.</br>
+      Also we want to expose some new API inpsired by emulators like savestates.<br/>
+      The fact that love2d main loop is implemented in Lua is incompatible with retro_run from libretro, it prevents executing the game step by step.</p>
+
+      <h3>Does lutro follow the API of love2d exactly?</h3>
+      <p>No, some calls are not implemented at all. Only the strict minimum to be able to produce retro games have been implemented.</br>
+      Some parts of the input code has also been modified to follow the libretro API more closely.</p>
+
+      <h3>Is lutro free?</h3>
+      <p>Yes, lutro is distributed under the MIT license, you can use it freely, including for commercial projects.</p>
+
+      <h3>How to run lutro games?</h3>
+      <p>You launch them using <a href="https://www.retroarch.com">RetroArch</a> or <a href="https://ludo.libretro.com">Ludo</a> or any other libretro frontend. Lutro works like an emulator, and your game is the ROM.</p>
+
+      <h3>Can I port love2d games to lutro</h3>
+      <p>Yes, but it's not very easy. A few games have been ported from love2d, like <a href="https://github.com/libretro/lutro-sienna">Sienna</a> or In Your Face City Trains.</p>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container text-center">
+      Lutro is a project of <a href="https://github.com/libretro">libretro</a>. Fork it on <a href="https://github.com/libretro/libretro-lutro">github</a>! This website is not using cookies.
+    </div>
+  </footer>
+</body>
+</html>
