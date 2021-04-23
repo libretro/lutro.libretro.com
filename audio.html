@@ -78,54 +78,44 @@
   <div class="doc">
     <div class="container">
 
-      <h2>image</h2>
+      <h2>audio</h2>
 
-      <p>Provides an interface to decode encoded image data.</p>
+      <p>Provides an audio interface to play sounds.</p>
 
-      <h4>ImageData (type)</h4>
+      <h4>love.audio.newSource</h4>
+      <p>Creates a new audio <a href="Source.html">Source</a> from an audio file. Supported file formats are .wav and .ogg.</p>
+      <p><code>type</code> can be "static" or "stream"</p>
+      <code><pre>source = love.audio.newSource(filename, type)</pre></code>
 
-      <p>Raw (decoded) image data.</p>
+      <h4>love.audio.play</h4>
+      <p>Plays the specified Source.</p>
+      <code><pre>love.audio.play(source)</pre></code>
 
-      <h4>love.image.newImageData</h4>
+      <h4>love.audio.stop</h4>
+      <p>Stops playing the specified Source.</p>
+      <code><pre>love.audio.stop(source)</pre></code>
 
-      <p>To create an empty ImageData:</p>
+      <h4>love.audio.pause</h4>
+      <p>To pause one or more sources:</p>
+      <code><pre>paused_sources = love.audio.pause(source, ...)</pre></code>
+      <p>To pause all sources:</p>
+      <code><pre>paused_sources = love.audio.pause()</pre></code>
+  
+      <h4>love.audio.getVolume</h4>
+      <p>Returns the master volume.</p>
+      <code><pre>volume = love.audio.getVolume()</pre></code>
 
-      <code>
-<pre>imageData = love.image.newImageData(width, height)</pre>
-      </code>
+      <h4>love.audio.setVolume</h4>
+      <p>Sets the master volume.</p>
+      <code><pre>love.audio.setVolume(volume)</pre></code>
 
-      <p>To an ImageData from an image file:</p>
+      <h4>love.audio.getActiveSources</h4>
+      <p>Returns the sources currently being played.</p>
+      <code><pre>sources = love.audio.getActiveSources()</pre></code>
 
-      <code>
-<pre>imageData = love.image.newImageData(filename)</pre>
-      </code>
-                        
-      <h4>ImageData:getWidth</h4>
-      <p>Returns the width of the ImageData.</p>
-      <h4>ImageData:getHeight</h4>
-      <p>Returns the height of the ImageData.</p>
-      <h4>ImageData:getPixel</h4>
-
-      <p>Returns the color of a pixel in the ImageData.</p>
-
-      <code>
-<pre>r, g, b, a = imageData:getPixel(x, y)</pre>
-      </code>
-
-      <h4>ImageData:setPixel</h4>
-
-      <p>Sets the color of a pixel in the ImageData.</p>
-
-      <code>
-<pre>imageData:setPixel(x, y, r, g, b, a)</pre>
-      </code>
-
-      <h4>ImageData:getDimensions</h4>
-      <p>Returns the width and height of the ImageData.</p>
-      <code>
-<pre>width, height = imageData:getDimensions()</pre>
-      </code>
-
+      <h4>love.audio.getActiveSourceCount</h4>
+      <p>Gets the current number of simultaneously playing sources.</p>
+      <code><pre>num_active = love.audio.getActiveSourcesCount()</pre></code>
     </div>
   </div>
 

@@ -78,54 +78,32 @@
   <div class="doc">
     <div class="container">
 
-      <h2>image</h2>
+      <h2>Source</h2>
 
-      <p>Provides an interface to decode encoded image data.</p>
-
-      <h4>ImageData (type)</h4>
-
-      <p>Raw (decoded) image data.</p>
-
-      <h4>love.image.newImageData</h4>
-
-      <p>To create an empty ImageData:</p>
-
-      <code>
-<pre>imageData = love.image.newImageData(width, height)</pre>
-      </code>
-
-      <p>To an ImageData from an image file:</p>
-
-      <code>
-<pre>imageData = love.image.newImageData(filename)</pre>
-      </code>
-                        
-      <h4>ImageData:getWidth</h4>
-      <p>Returns the width of the ImageData.</p>
-      <h4>ImageData:getHeight</h4>
-      <p>Returns the height of the ImageData.</p>
-      <h4>ImageData:getPixel</h4>
-
-      <p>Returns the color of a pixel in the ImageData.</p>
-
-      <code>
-<pre>r, g, b, a = imageData:getPixel(x, y)</pre>
-      </code>
-
-      <h4>ImageData:setPixel</h4>
-
-      <p>Sets the color of a pixel in the ImageData.</p>
-
-      <code>
-<pre>imageData:setPixel(x, y, r, g, b, a)</pre>
-      </code>
-
-      <h4>ImageData:getDimensions</h4>
-      <p>Returns the width and height of the ImageData.</p>
-      <code>
-<pre>width, height = imageData:getDimensions()</pre>
-      </code>
-
+      <h4>Source:setLooping</h4>
+      <p>Then set to true, the Source will be played continuously.</p>
+      <h4>Source:isLooping</h4>
+      <p>Returns wether the Source is looping.</p>
+      <h4>Source:isStopped</h4>
+      <p>Returns wether the Source is stopped.</p>
+      <h4>Source:pause</h4>
+      <p>Pauses the Source.</p>
+      <h4>Source:isPaused</h4>
+      <p>Returns wether the Source is paused.</p>
+      <h4>Source:isPlaying</h4>
+      <p>Returns wether the Source is playing.</p>
+      <h4>Source:setVolume</h4>
+      <p>Sets the volume of this Source.</p>
+      <h4>Source:getVolume</h4>
+      <p>Returns the volume of this Source.</p>
+      <h4>Source:seek</h4>
+      <p>Jumps to a given position in the Source.</p>
+      <h4>Source:tell</h4>
+      <p>Returns the current position in the source.</p>
+      <h4>Source:setPitch</h4>
+      <p>Sets the pitch of the source.</p>
+      <h4>Source:getPitch</h4>
+      <p>Returns the pitch of the source.</p>
     </div>
   </div>
 

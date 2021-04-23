@@ -78,52 +78,20 @@
   <div class="doc">
     <div class="container">
 
-      <h2>image</h2>
+      <h2>sound</h2>
 
-      <p>Provides an interface to decode encoded image data.</p>
+      <p>This module is responsible for decoding sound files. It can't play the sounds, see <a href="audio.html">love.audio</a> for that.</p>
 
-      <h4>ImageData (type)</h4>
+      <h4>SoundData (type)</h4>
 
-      <p>Raw (decoded) image data.</p>
+      <p>Contains raw audio samples.</p>
 
-      <h4>love.image.newImageData</h4>
+      <h4>love.sound.newSoundData</h4>
 
-      <p>To create an empty ImageData:</p>
-
-      <code>
-<pre>imageData = love.image.newImageData(width, height)</pre>
-      </code>
-
-      <p>To an ImageData from an image file:</p>
+      <p>Loads a sound from an audio file. Supported files are .wav and .ogg.</p>
 
       <code>
-<pre>imageData = love.image.newImageData(filename)</pre>
-      </code>
-                        
-      <h4>ImageData:getWidth</h4>
-      <p>Returns the width of the ImageData.</p>
-      <h4>ImageData:getHeight</h4>
-      <p>Returns the height of the ImageData.</p>
-      <h4>ImageData:getPixel</h4>
-
-      <p>Returns the color of a pixel in the ImageData.</p>
-
-      <code>
-<pre>r, g, b, a = imageData:getPixel(x, y)</pre>
-      </code>
-
-      <h4>ImageData:setPixel</h4>
-
-      <p>Sets the color of a pixel in the ImageData.</p>
-
-      <code>
-<pre>imageData:setPixel(x, y, r, g, b, a)</pre>
-      </code>
-
-      <h4>ImageData:getDimensions</h4>
-      <p>Returns the width and height of the ImageData.</p>
-      <code>
-<pre>width, height = imageData:getDimensions()</pre>
+<pre>soundData = newSoundData(explosion.wav)</pre>
       </code>
 
     </div>
