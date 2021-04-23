@@ -87,6 +87,10 @@
 
       <p>Lutro's coordinate system is rooted in the upper-left corner of the screen, which is at location (0, 0). The x axis is horizontal: larger values are further to the right. The y axis is vertical: larger values are further towards the bottom. It is worth noting that the location (0, 0) aligns with the upper-left corner of the pixel as well, meaning that for some functions you may encounter off-by-one problems in the render output when drawing 1 pixel wide lines.</p>
 
+      <p><img src="lovecoordsystem.png" /></p>
+
+      <p>In many cases, you draw images or shapes in terms of their upper-left corner (See the picture above).</p>
+
       <h4>love.graphics.clear</h4>
       <p>Clears the screen to the background color.</p>
       <code><pre>love.graphics.clear()</pre></code>
@@ -94,6 +98,8 @@
       <h4>love.graphics.draw</h4>
       <p>Draws objects on screen. In Lutro, a Drawable is typically an Image.</p>
       <code><pre>love.graphics.draw(drawable, x, y, r, sx, sy, ox, oy, kx, ky)</pre></code>
+      <p>You can also draw a specified Quad from the texture:</p>
+      <code><pre>love.graphics.draw(texture, quad, x, y, r, sx, sy, ox, oy, kx, ky)</pre></code>
 
       <h4>love.graphics.newImage</h4>
       <p>Creates a new <a href="Image.html">Image</a>.</p>
@@ -112,13 +118,33 @@
       <h4>love.graphics.newCanvas</h4>
 
       <h4>love.graphics.print</h4>
+      <p>Draws text on screen. A Font need to be set with setFont prior to use.</p>
+      <code><pre>love.graphics.print(text, x, y)</pre></code>
+
       <h4>love.graphics.printf</h4>
+      <p>Draws formatted text, with word wrap and alignment. <code>align</code> can be "left", "center" or "right".</p>
+      <code><pre>love.graphics.print(text, x, y, limit, align)</pre></code>
 
       <h4>love.graphics.point</h4>
+      <p>Draws a point.</p>
+      <code><pre>love.graphics.point(x, y)</pre></code>
+
       <h4>love.graphics.points</h4>
+      <p>Draws one or more points.</p>
+      <code><pre>love.graphics.points(x, y, ...)</pre></code>
+
       <h4>love.graphics.line</h4>
+      <p>Draws lines between points.</p>
+      <code><pre>love.graphics.line(x1, y1, x2, y2, ...)</pre></code>
+
       <h4>love.graphics.rectangle</h4>
+      <p>Draws a rectangle. <code>mode</code> can be "fill" or "line".</p>
+      <code><pre>love.graphics.rectangle(mode, x, y, width, height)</pre></code>
+
       <h4>love.graphics.polygon</h4>
+      <p>Draws a polygon. <code>mode</code> can be "fill" or "line".</p>
+      <code><pre>love.graphics.polygon(mode, x1, y1, x2, y2, ...)</pre></code>
+
       <h4>love.graphics.circle</h4>
       <h4>love.graphics.ellipse</h4>
 
@@ -127,7 +153,7 @@
       <h4>love.graphics.push</h4>
       <h4>love.graphics.rotate</h4>
       <h4>love.graphics.scale</h4>
-      <h4>love.graphics.shear</h4>
+      <!-- <h4>love.graphics.shear</h4> -->
       <h4>love.graphics.translate</h4>
 
       <h4>love.graphics.getBackgroundColor</h4>
