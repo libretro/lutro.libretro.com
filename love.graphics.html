@@ -88,30 +88,40 @@
       <p>Lutro's coordinate system is rooted in the upper-left corner of the screen, which is at location (0, 0). The x axis is horizontal: larger values are further to the right. The y axis is vertical: larger values are further towards the bottom. It is worth noting that the location (0, 0) aligns with the upper-left corner of the pixel as well, meaning that for some functions you may encounter off-by-one problems in the render output when drawing 1 pixel wide lines.</p>
 
       <h4>love.graphics.clear</h4>
+      <p>Clears the screen to the background color.</p>
+      <code><pre>love.graphics.clear()</pre></code>
+
       <h4>love.graphics.draw</h4>
-      <h4>love.graphics.getBackgroundColor</h4>
-      <h4>love.graphics.getColor</h4>
-      <h4>love.graphics.getFont</h4>
-      <h4>love.graphics.getHeight</h4>
-      <p>Returns the height of the libretro viewport.</p>
-      <h4>love.graphics.getWidth</h4>
-      <p>Returns the width of the libretro viewport.</p>
-      <h4>love.graphics.getCanvas</h4>
-      <h4>love.graphics.line</h4>
+      <p>Draws objects on screen. In Lutro, a Drawable is typically an Image.</p>
+      <code><pre>love.graphics.draw(drawable, x, y, r, sx, sy, ox, oy, kx, ky)</pre></code>
+
       <h4>love.graphics.newImage</h4>
-      Returns an <a href="Image.html">Image</a>.
+      <p>Creates a new <a href="Image.html">Image</a>.</p>
       <p>From an image file:</p>
       <code><pre>img = love.graphics.newImage("star.png")</pre></code>
       <p>From an <a href="ImageData.html">ImageData</a>:</p>
       <code><pre>img = love.graphics.newImage(imgData)</pre></code>
+
       <h4>love.graphics.newImageFont</h4>
+      <p>Creates a new <a href="Font.html">Font</a> by loading a specifically formatted image.</p>
+      <p>From an image file:</p>
+      <code><pre>font = love.graphics.newImageFont("font.png", "ABCDEFGHIJKLMNOPQRSTUVWXYZ")</pre></code>
+      <p>From an <a href="ImageData.html">ImageData</a>:</p>
+      <code><pre>font = love.graphics.newImageFont(imgData, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")</pre></code>
       <h4>love.graphics.newQuad</h4>
       <h4>love.graphics.newCanvas</h4>
-      <h4>love.graphics.point</h4>
-      <h4>love.graphics.points</h4>
-      <h4>love.graphics.present</h4>
+
       <h4>love.graphics.print</h4>
       <h4>love.graphics.printf</h4>
+
+      <h4>love.graphics.point</h4>
+      <h4>love.graphics.points</h4>
+      <h4>love.graphics.line</h4>
+      <h4>love.graphics.rectangle</h4>
+      <h4>love.graphics.polygon</h4>
+      <h4>love.graphics.circle</h4>
+      <h4>love.graphics.ellipse</h4>
+
       <h4>love.graphics.origin</h4>
       <h4>love.graphics.pop</h4>
       <h4>love.graphics.push</h4>
@@ -119,19 +129,32 @@
       <h4>love.graphics.scale</h4>
       <h4>love.graphics.shear</h4>
       <h4>love.graphics.translate</h4>
-      <h4>love.graphics.rectangle</h4>
-      <h4>love.graphics.polygon</h4>
-      <h4>love.graphics.circle</h4>
-      <h4>love.graphics.ellipse</h4>
+
+      <h4>love.graphics.getBackgroundColor</h4>
       <h4>love.graphics.setBackgroundColor</h4>
+      <h4>love.graphics.getColor</h4>
       <h4>love.graphics.setColor</h4>
-      <h4>love.graphics.setDefaultFilter</h4>
-      <p>A stub.</p>
+      <p>Sets the color used for drawing.</p>
+      <h4>love.graphics.getFont</h4>
+      <p>Returns the current <a href="Font.html">Font</a>.</p>
       <h4>love.graphics.setFont</h4>
-      <h4>love.graphics.setLineStyle</h4>
-      <h4>love.graphics.setLineWidth</h4>
+      <p>Set an already-loaded Font as the current font.</p>
+      <h4>love.graphics.getHeight</h4>
+      <p>Returns the height of the libretro viewport.</p>
+      <h4>love.graphics.getWidth</h4>
+      <p>Returns the width of the libretro viewport.</p>
+      <h4>love.graphics.getCanvas</h4>
       <h4>love.graphics.setScissor</h4>
       <h4>love.graphics.setCanvas</h4>
+
+      <!-- <h4>love.graphics.setLineStyle</h4>
+      <p>A stub.</p>
+      <h4>love.graphics.setLineWidth</h4>
+      <p>A stub.</p>
+      <h4>love.graphics.present</h4>
+      <p>A stub.</p>
+      <h4>love.graphics.setDefaultFilter</h4>
+      <p>A stub.</p> -->
 
     </div>
   </div>
