@@ -81,48 +81,23 @@
   <div class="doc">
     <div class="container">
 
-      <h2>Getting Started</h2>
+      <h2>Building Lutro</h2>
 
-		  <h3>Get a Lutro plus alibretro frontend</h3>
+      <p>Building Lutro from source is only needed if you want to modify Lutro. If you just want to develop games, move to <a href="gettingstarted.html">Getting started</a></p>
 
-      <p>The easiest way to get Lutro is by downloading and installing <a href="https://ludo.libretro.com">Ludo</a>.</p>
-      <p>Ludo is like RetroArch an emulator frontend.<br />
-      Think of it as a user interface that can run many retro games, including Lutro games.</p>
+      <p>To build Lutro from source, you will need <code>git</code>, a C compiler like <code>gcc</code> or <code>clang</code> and <code>make</code>.</p>
 
-      <h3>Get a sample game</h3>
+      <p>Clone the repo:</p>
 
-      <p>You can download this example game that was created to help you get started with Lutro:</p>
+      <code><pre>git clone https://github.com/libretro/libretro-lutro.git</pre></code>
 
-      <p><a href="https://github.com/libretro/lutro-snake">https://github.com/libretro/lutro-snake</a></p>
+      <p>Then change directory to libretro-lutro and build:</p>
 
-      <h3>Launch a game</h3>
+      <code><pre>make</pre></code>
 
-      <ol>
-        <li>Launch Ludo</li>
-        <li>Go to Load Core (pressing X)</li>
-        <li>Load the core named lutro_libretro</li>
-        <li>Go back to the main menu (pressing Z)</li>
-        <li>Go to Load Game</li>
-        <li>Navigate to lutro-snake and select the <code>main.lua</code> file.</li>
-      </ol>
+      <p>You should then find the binary in the form of a shared library named lutro_libretro.</p>
 
-      <p>The game should launch.</p>
-
-      <h3>Launch a game from the command line</h3>
-
-      <p>You can also launch games using the CLI. Starting from the directory of Ludo.</p>
-
-      <h6>On Windows, in a shell like Git Bash:</h6>
-
-      <code><pre>./ludo.exe -L cores/lutro_libretro.dll path/to/lutro-snake/</pre></code>
-
-      <h6>On Mac OS:</h6>
-
-      <code><pre>./ludo -L cores/lutro_libretro.dylib path/to/lutro-snake/</pre></code>
-
-      <h6>On Linux:</h6>
-
-      <code><pre>./ludo -L cores/lutro_libretro.so path/to/lutro-snake/</pre></code>
+      <p>See the top of the Makefile for more build options.</p>
 
     </div>
   </div>
