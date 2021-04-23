@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="https://lutro.libretro.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Lutro - Documentation</title>
+  <meta name="description" content="Lutro API reference for game developers">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div>
+    <!-- Top Nav -->
+    <div class="topnav fixed-top">
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="doc.html">Doc</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/libretro/libretro-lutro">Github↗</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://discord.gg/YXYSEQD">Discord↗</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <h1>Lutro - Documentation</h1>
+
+        <div class="download">
+
+          <h4>Modules</h4>
+
+          <div class="row">
+
+            <div class="col">
+              <h5>love</h5>
+              <ul>
+                <li><a href="love.html">love</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>graphics</h5>
+              <ul>
+                <li><a href="love.graphics.html">love.graphics</a></li>
+                <li><a href="love.image.html">love.image</a></li>
+                <li><a href="Font.html">Font</a></li>
+                <li><a href="Image.html">Image</a></li>
+                <li><a href="Quad.html">Quad</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>audio</h5>
+              <ul>
+                <li><a href="love.audio.html">love.audio</a></li>
+                <li><a href="love.sound.html">love.sound</a></li>
+                <li><a href="Source.html">Source</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>input</h5>
+              <ul>
+                <li><a href="love.input.html">love.input</a></li>
+                <li><a href="love.keyboard.html">love.keyboard</a></li>
+                <li><a href="love.joystick.html">love.joystick</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+  </div> 
+
+  <a id="doc"></a>
+  <div class="doc">
+    <div class="container">
+
+      <h2>love</h2>
+
+      <p>When beginning to write games using Lutro, the most important parts of the API are the callbacks: <code>love.load</code> to do one-time setup of your game, <code>love.update</code> which is used to manage your game's state frame-to-frame, and <code>love.draw</code> which is used to render the game state onto the screen.</p>
+
+      <p>More interactive games will override additional callbacks in order to handle input from the user, and other aspects of a full-featured game.</p>
+      
+      <p>Lutro provides default placeholders for these callbacks, which you can override inside your own code by creating your own function with the same name as the callback.</p>
+
+      <h4>love.load</h4>
+
+      <p><code>love.load</code> is called once in the lifetime of the application, at the very beginning. Use this to load assets and initialize your game.</p>
+
+      <h6>Example:</h6>
+
+      <code>
+<pre>function love.load()
+  whale = love.graphics.newImage("whale.png")
+  x = 0
+end</pre>
+      </code>
+
+      <h4>love.update</h4>
+
+      <p><code>love.update</code> is called once per frame, 60 times per second. Use this to execute your game logic.</p>
+
+      <h6>Arguments:</h6>
+      <dl>
+        <dt>dt</dt><dd>The time elapsed since last frame. By default <code>1.0/60.0</code></dd>
+      </dl>
+
+      <h6>Example:</h6>
+
+      <code>
+<pre>function love.update(dt)
+  x = x + 1
+end</pre>
+      </code>
+
+      <h4>love.draw</h4>
+
+      <p><code>love.draw</code> is also called once per frame, 60 times per second. Use this to draw your game graphics.</p>
+
+      <h6>Example:</h6>
+
+      <code>
+<pre>function love.draw()
+  love.graphics.draw(whale, x, 32)
+end</pre>
+      </code>
+
+      <h4>love.gamepadpressed</h4>
+
+      <p><code>love.gamepadpressed</code> is called when a player pressed one of the joypad buttons.</p>
+
+      <h6>Example:</h6>
+
+      <code>
+<pre>function love.gamepadpressed(i, k)
+  print("player pressed", i, k)
+end</pre>
+      </code>
+
+      <h4>love.gamepadreleased</h4>
+
+      <p>Same as <code>love.gamepadpressed</code> but called when a button is released.</p>
+
+      <h4>love.serialize</h4>
+
+      <p>This is an optional callback. When the libretro frontend calls <code>love.serialize</code>, your game can return a serialized game state in the form of a string. Think of this as savestates in an emulator.</p>
+
+      <h6>Example:</h6>
+
+      <code>
+<pre>function love.serialize(size)
+  local gamestate = {}
+  gamestate.x = x
+  return json:encode(gamestate)
+end</pre>
+      </code>
+
+      <h4>love.unserialize</h4>
+
+      <p>This is an optional callback. When the libretro frontend calls <code>love.unserialize</code>, your game will receive a game state serialized as a string. Think of this as savestates in an emulator. It's up to the game developer how to implement proper unserialization.</p>
+
+      <h6>Example:</h6>
+
+      <code>
+<pre>function love.unserialize(data, size)
+  if data == nil then return end
+  local gamestate = json:decode(data)
+  x = gamestate.x
+end</pre>
+      </code>
+
+      <h4>love.serializeSize</h4>
+
+      <p>This is called when the libretro frontend wants to know the size of your game savestate. Choosing a large and constant value is fine.</p>
+
+      <h6>Example:</h6>
+
+      <code>
+<pre>function love.serializeSize()
+  return 1024*8
+end</pre>
+      </code>
+
+      <h4>love.reset</h4>
+
+      <p>This is called when the libretro frontend wants to reset the game. In this callback, you can free resources and reinitialize your game to start over.</p>
+
+      <h6>Example:</h6>
+
+      <code>
+<pre>function love.reset()
+  gamestate = {}
+  love.load()
+end</pre>
+      </code>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container text-center">
+      Lutro is a project of <a href="https://github.com/libretro">libretro</a>. Fork it on <a href="https://github.com/libretro/libretro-lutro">github</a>! This website is not using cookies.
+    </div>
+  </footer>
+</body>
+</html>

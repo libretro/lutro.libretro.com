@@ -30,6 +30,12 @@ code {
   font-family: 'Menlo', monospace;
 }
 
+ul {
+  list-style: square;
+  padding-left: 18px;
+  color: #6b9941;
+}
+
 /* Top Nav ------------------------------------------------------------------ */
 
 .topnav {
@@ -55,12 +61,6 @@ header h1, header p {
   margin-top: 50px;
   background: #f4f4f4;
   padding: 30px;
-}
-
-.download ul {
-  list-style: square;
-  padding-left: 18px;
-  color: #6b9941;
 }
 
 /* About -------------------------------------------------------------------- */

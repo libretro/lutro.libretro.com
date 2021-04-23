@@ -38,7 +38,7 @@
             <div class="col">
               <h5>love</h5>
               <ul>
-                <li><a href="doc.html">love</a></li>
+                <li><a href="love.html">love</a></li>
               </ul>
             </div>
 
@@ -81,124 +81,25 @@
   <div class="doc">
     <div class="container">
 
-      <h2>love</h2>
+      <h2>Welcome</h2>
 
-      <p>When beginning to write games using Lutro, the most important parts of the API are the callbacks: <code>love.load</code> to do one-time setup of your game, <code>love.update</code> which is used to manage your game's state frame-to-frame, and <code>love.draw</code> which is used to render the game state onto the screen.</p>
+      <p>Some interesting places to go from here:</p>
 
-      <p>More interactive games will override additional callbacks in order to handle input from the user, and other aspects of a full-featured game.</p>
-      
-      <p>Lutro provides default placeholders for these callbacks, which you can override inside your own code by creating your own function with the same name as the callback.</p>
+      <ul>
+        <li><a href="gettingstarted.html">Getting Started</a></li>
+        <li><a href="building.html">Building Lutro</a></li>
+        <li><a href="https://github.com/libretro/libretro-lutro/blob/master/LICENSE">License</a></li>
+      </ul>
 
-      <h4>love.load</h4>
+      <h2>Lua</h2>
 
-      <p><code>love.load</code> is called once in the lifetime of the application, at the very beginning. Use this to load assets and initialize your game.</p>
+      <p>Never used Lua before? It's a really cool language! This manual won't teach you Lua, but fortunately there are other good resources for that.</p>
 
-      <h6>Example:</h6>
-
-      <code>
-<pre>function love.load()
-  whale = love.graphics.newImage("whale.png")
-  x = 0
-end</pre>
-      </code>
-
-      <h4>love.update</h4>
-
-      <p><code>love.update</code> is called once per frame, 60 times per second. Use this to execute your game logic.</p>
-
-      <h6>Arguments:</h6>
-      <dl>
-        <dt>dt</dt><dd>The time elapsed since last frame. By default <code>1.0/60.0</code></dd>
-      </dl>
-
-      <h6>Example:</h6>
-
-      <code>
-<pre>function love.update(dt)
-  x = x + 1
-end</pre>
-      </code>
-
-      <h4>love.draw</h4>
-
-      <p><code>love.draw</code> is also called once per frame, 60 times per second. Use this to draw your game graphics.</p>
-
-      <h6>Example:</h6>
-
-      <code>
-<pre>function love.draw()
-  love.graphics.draw(whale, x, 32)
-end</pre>
-      </code>
-
-      <h4>love.gamepadpressed</h4>
-
-      <p><code>love.gamepadpressed</code> is called when a player pressed one of the joypad buttons.</p>
-
-      <h6>Example:</h6>
-
-      <code>
-<pre>function love.gamepadpressed(i, k)
-  print("player pressed", i, k)
-end</pre>
-      </code>
-
-      <h4>love.gamepadreleased</h4>
-
-      <p>Same as <code>love.gamepadpressed</code> but called when a button is released.</p>
-
-      <h4>love.serialize</h4>
-
-      <p>This is an optional callback. When the libretro frontend calls <code>love.serialize</code>, your game can return a serialized game state in the form of a string. Think of this as savestates in an emulator.</p>
-
-      <h6>Example:</h6>
-
-      <code>
-<pre>function love.serialize(size)
-  local gamestate = {}
-  gamestate.x = x
-  return json:encode(gamestate)
-end</pre>
-      </code>
-
-      <h4>love.unserialize</h4>
-
-      <p>This is an optional callback. When the libretro frontend calls <code>love.unserialize</code>, your game will receive a game state serialized as a string. Think of this as savestates in an emulator. It's up to the game developer how to implement proper unserialization.</p>
-
-      <h6>Example:</h6>
-
-      <code>
-<pre>function love.unserialize(data, size)
-  if data == nil then return end
-  local gamestate = json:decode(data)
-  x = gamestate.x
-end</pre>
-      </code>
-
-      <h4>love.serializeSize</h4>
-
-      <p>This is called when the libretro frontend wants to know the size of your game savestate. Choosing a large and constant value is fine.</p>
-
-      <h6>Example:</h6>
-
-      <code>
-<pre>function love.serializeSize()
-  return 1024*8
-end</pre>
-      </code>
-
-      <h4>love.reset</h4>
-
-      <p>This is called when the libretro frontend wants to reset the game. In this callback, you can free resources and reinitialize your game to start over.</p>
-
-      <h6>Example:</h6>
-
-      <code>
-<pre>function love.reset()
-  gamestate = {}
-  love.load()
-end</pre>
-      </code>
+      <ul>
+        <li><a href="http://lua.org/pil">Programming in Lua (first edition)</a></li>
+        <li><a href="http://lua-users.org/wiki/TutorialDirectory">Lua-Users Tutorials</a></li>
+        <li><a href="http://www.lua.org/manual/5.1/">Lua 5.1 Reference Manual</a></li>
+      </ul>
 
     </div>
   </div>

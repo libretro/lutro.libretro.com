@@ -81,46 +81,48 @@
   <div class="doc">
     <div class="container">
 
-      <h2>love.joystick</h2>
+      <h2>Getting Started</h2>
 
-      <p>Provides an interface to connected joysticks</p>
+		  <h3>Get a Lutro plus alibretro frontend</h3>
 
-      <h4>love.joystick.getJoystickCount</h4>
+      <p>The easiest way to get Lutro is by downloading and installing <a href="https://ludo.libretro.com">Ludo</a>.</p>
+      <p>Ludo is like RetroArch an emulator frontend.<br />
+      Think of it as a user interface that can run many retro games, including Lutro games.</p>
 
-      <p>Returns the number of joysticks plugged.</p>
+      <h3>Get a sample game</h3>
 
-      <code>
-<pre>num_plugged = love.joystick.getJoystickCount()</pre>
-      </code>
+      <p>You can download this example game that was created to help you get started with Lutro:</p>
 
-      <h4>love.joystick.isDown</h4>
+      <p><a href="https://github.com/libretro/lutro-snake">https://github.com/libretro/lutro-snake</a></p>
 
-      <p>Returns whether a button is pressed.</p>
+      <h3>Launch a game</h3>
 
-      <code>
-<pre>select_pressed = love.joystick.isDown(1, RETRO_DEVICE_ID_JOYPAD_SELECT)</pre>
-      </code>
+      <ol>
+        <li>Launch Ludo</li>
+        <li>Go to Load Core (pressing X)</li>
+        <li>Load the core named lutro_libretro</li>
+        <li>Go back to the main menu (pressing Z)</li>
+        <li>Go to Load Game</li>
+        <li>Navigate to lutro-snake and select the <code>main.lua</code> file.</li>
+      </ol>
 
-      It is recommanded to define:
+      <p>The game should launch.</p>
 
-      <code>
-<pre>RETRO_DEVICE_ID_JOYPAD_B        = 1
-RETRO_DEVICE_ID_JOYPAD_Y        = 2
-RETRO_DEVICE_ID_JOYPAD_SELECT   = 3
-RETRO_DEVICE_ID_JOYPAD_START    = 4
-RETRO_DEVICE_ID_JOYPAD_UP       = 5
-RETRO_DEVICE_ID_JOYPAD_DOWN     = 6
-RETRO_DEVICE_ID_JOYPAD_LEFT     = 7
-RETRO_DEVICE_ID_JOYPAD_RIGHT    = 8
-RETRO_DEVICE_ID_JOYPAD_A        = 9
-RETRO_DEVICE_ID_JOYPAD_X        = 10
-RETRO_DEVICE_ID_JOYPAD_L        = 11
-RETRO_DEVICE_ID_JOYPAD_R        = 12
-RETRO_DEVICE_ID_JOYPAD_L2       = 13
-RETRO_DEVICE_ID_JOYPAD_R2       = 14
-RETRO_DEVICE_ID_JOYPAD_L3       = 15
-RETRO_DEVICE_ID_JOYPAD_R3       = 16</pre>
-</code>
+      <h3>Launch a game from the command line</h3>
+
+      <p>You can also launch games using the CLI. Starting from the directory of Ludo.</p>
+
+      <h6>On Windows:</h6>
+
+      <code><pre>./ludo.exe -L cores/lutro_libretro.dll path/to/lutro-snake/</pre></code>
+
+      <h6>On Mac OS:</h6>
+
+      <code><pre>./ludo -L cores/lutro_libretro.dylib path/to/lutro-snake/</pre></code>
+
+      <h6>On Linux:</h6>
+
+      <code><pre>./ludo -L cores/lutro_libretro.so path/to/lutro-snake/</pre></code>
 
     </div>
   </div>
