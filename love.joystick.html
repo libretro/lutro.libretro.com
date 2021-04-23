@@ -81,44 +81,47 @@
   <div class="doc">
     <div class="container">
 
-      <h2>audio</h2>
+      <h2>joystick</h2>
 
-      <p>Provides an audio interface to play sounds.</p>
+      <p>Provides an interface to connected joysticks</p>
 
-      <h4>love.audio.newSource</h4>
-      <p>Creates a new audio <a href="Source.html">Source</a> from an audio file. Supported file formats are .wav and .ogg.</p>
-      <p><code>type</code> can be "static" or "stream"</p>
-      <code><pre>source = love.audio.newSource(filename, type)</pre></code>
+      <h4>love.joystick.getJoystickCount</h4>
 
-      <h4>love.audio.play</h4>
-      <p>Plays the specified Source.</p>
-      <code><pre>love.audio.play(source)</pre></code>
+      <p>Returns the number of joysticks plugged.</p>
 
-      <h4>love.audio.stop</h4>
-      <p>Stops playing the specified Source.</p>
-      <code><pre>love.audio.stop(source)</pre></code>
+      <code>
+<pre>num_plugged = love.joystick.getJoystickCount()</pre>
+      </code>
 
-      <h4>love.audio.pause</h4>
-      <p>To pause one or more sources:</p>
-      <code><pre>paused_sources = love.audio.pause(source, ...)</pre></code>
-      <p>To pause all sources:</p>
-      <code><pre>paused_sources = love.audio.pause()</pre></code>
-  
-      <h4>love.audio.getVolume</h4>
-      <p>Returns the master volume.</p>
-      <code><pre>volume = love.audio.getVolume()</pre></code>
+      <h4>love.joystick.isDown</h4>
 
-      <h4>love.audio.setVolume</h4>
-      <p>Sets the master volume.</p>
-      <code><pre>love.audio.setVolume(volume)</pre></code>
+      <p>Returns whether a button is pressed.</p>
 
-      <h4>love.audio.getActiveSources</h4>
-      <p>Returns the sources currently being played.</p>
-      <code><pre>sources = love.audio.getActiveSources()</pre></code>
+      <code>
+<pre>select_pressed = love.joystick.isDown(1, RETRO_DEVICE_ID_JOYPAD_SELECT)</pre>
+      </code>
 
-      <h4>love.audio.getActiveSourceCount</h4>
-      <p>Gets the current number of simultaneously playing sources.</p>
-      <code><pre>num_active = love.audio.getActiveSourcesCount()</pre></code>
+      It is recommanded to define:
+
+      <code>
+<pre>RETRO_DEVICE_ID_JOYPAD_B        = 1
+RETRO_DEVICE_ID_JOYPAD_Y        = 2
+RETRO_DEVICE_ID_JOYPAD_SELECT   = 3
+RETRO_DEVICE_ID_JOYPAD_START    = 4
+RETRO_DEVICE_ID_JOYPAD_UP       = 5
+RETRO_DEVICE_ID_JOYPAD_DOWN     = 6
+RETRO_DEVICE_ID_JOYPAD_LEFT     = 7
+RETRO_DEVICE_ID_JOYPAD_RIGHT    = 8
+RETRO_DEVICE_ID_JOYPAD_A        = 9
+RETRO_DEVICE_ID_JOYPAD_X        = 10
+RETRO_DEVICE_ID_JOYPAD_L        = 11
+RETRO_DEVICE_ID_JOYPAD_R        = 12
+RETRO_DEVICE_ID_JOYPAD_L2       = 13
+RETRO_DEVICE_ID_JOYPAD_R2       = 14
+RETRO_DEVICE_ID_JOYPAD_L3       = 15
+RETRO_DEVICE_ID_JOYPAD_R3       = 16</pre>
+</code>
+
     </div>
   </div>
 
