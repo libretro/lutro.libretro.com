@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="https://lutro.libretro.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Lutro - Documentation</title>
+  <meta name="description" content="Lutro API reference for game developers">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div>
+    <!-- Top Nav -->
+    <div class="topnav fixed-top">
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="doc.html">Doc</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/libretro/libretro-lutro">Github↗</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://discord.gg/YXYSEQD">Discord↗</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <h1>Lutro - Documentation</h1>
+
+        <div class="download">
+
+          <h4>Modules</h4>
+
+          <div class="row">
+
+            <div class="col">
+              <h5>love</h5>
+              <ul>
+                <li><a href="doc.html">love</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>graphics</h5>
+              <ul>
+                <li><a href="love.graphics.html">love.graphics</a></li>
+                <li><a href="love.image.html">love.image</a></li>
+                <li><a href="Font.html">Font</a></li>
+                <li><a href="Image.html">Image</a></li>
+                <li><a href="Quad.html">Quad</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>audio</h5>
+              <ul>
+                <li><a href="love.audio.html">love.audio</a></li>
+                <li><a href="love.sound.html">love.sound</a></li>
+                <li><a href="Source.html">Source</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>input</h5>
+              <ul>
+                <li><a href="love.input.html">love.input</a></li>
+                <li><a href="love.keyboard.html">love.keyboard</a></li>
+                <li><a href="love.joystick.html">love.joystick</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+  </div> 
+
+  <a id="doc"></a>
+  <div class="doc">
+    <div class="container">
+
+      <h2>love.graphics</h2>
+
+      <p>The primary responsibility for the love.graphics module is the drawing of lines, shapes, text, Images and other Drawable objects onto the screen. Its secondary responsibilities include loading external files (including Images and Fonts) into memory and managing screen geometry.</p>
+
+      <p>Lutro's coordinate system is rooted in the upper-left corner of the screen, which is at location (0, 0). The x axis is horizontal: larger values are further to the right. The y axis is vertical: larger values are further towards the bottom. It is worth noting that the location (0, 0) aligns with the upper-left corner of the pixel as well, meaning that for some functions you may encounter off-by-one problems in the render output when drawing 1 pixel wide lines.</p>
+
+      <h4>love.graphics.clear</h4>
+      <h4>love.graphics.draw</h4>
+      <h4>love.graphics.getBackgroundColor</h4>
+      <h4>love.graphics.getColor</h4>
+      <h4>love.graphics.getFont</h4>
+      <h4>love.graphics.getHeight</h4>
+      <h4>love.graphics.getWidth</h4>
+      <h4>love.graphics.getCanvas</h4>
+      <h4>love.graphics.line</h4>
+      <h4>love.graphics.newImage</h4>
+      <h4>love.graphics.newImageFont</h4>
+      <h4>love.graphics.newQuad</h4>
+      <h4>love.graphics.newCanvas</h4>
+      <h4>love.graphics.point</h4>
+      <h4>love.graphics.points</h4>
+      <h4>love.graphics.present</h4>
+      <h4>love.graphics.print</h4>
+      <h4>love.graphics.printf</h4>
+      <h4>love.graphics.origin</h4>
+      <h4>love.graphics.pop</h4>
+      <h4>love.graphics.push</h4>
+      <h4>love.graphics.rotate</h4>
+      <h4>love.graphics.scale</h4>
+      <h4>love.graphics.shear</h4>
+      <h4>love.graphics.translate</h4>
+      <h4>love.graphics.rectangle</h4>
+      <h4>love.graphics.polygon</h4>
+      <h4>love.graphics.circle</h4>
+      <h4>love.graphics.ellipse</h4>
+      <h4>love.graphics.setBackgroundColor</h4>
+      <h4>love.graphics.setColor</h4>
+      <h4>love.graphics.setDefaultFilter</h4>
+      <p>A stub.</p>
+      <h4>love.graphics.setFont</h4>
+      <h4>love.graphics.setLineStyle</h4>
+      <h4>love.graphics.setLineWidth</h4>
+      <h4>love.graphics.setScissor</h4>
+      <h4>love.graphics.setCanvas</h4>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container text-center">
+      Lutro is a project of <a href="https://github.com/libretro">libretro</a>. Fork it on <a href="https://github.com/libretro/libretro-lutro">github</a>! This website is not using cookies.
+    </div>
+  </footer>
+</body>
+</html>
