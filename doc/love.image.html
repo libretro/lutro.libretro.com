@@ -7,7 +7,7 @@
   <title>Lutro - Documentation</title>
   <meta name="description" content="Lutro API reference for game developers">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   
@@ -17,7 +17,7 @@
       <div class="container">
         <ul class="nav">
           <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="doc.html">Doc</a></li>
+          <li class="nav-item"><a class="nav-link" href="/doc/">Doc</a></li>
           <li class="nav-item"><a class="nav-link" href="https://github.com/libretro/libretro-lutro">Github↗</a></li>
           <li class="nav-item"><a class="nav-link" href="https://discord.gg/YXYSEQD">Discord↗</a></li>
         </ul>
@@ -38,43 +38,43 @@
             <div class="col">
               <h5>love</h5>
               <ul>
-                <li><a href="love.html">love</a></li>
+                <li><a href="/doc/love.html">love</a></li>
               </ul>
             </div>
 
             <div class="col">
               <h5>graphics</h5>
               <ul>
-                <li><a href="love.graphics.html">love.graphics</a></li>
-                <li><a href="love.image.html">love.image</a></li>
-                <li><a href="Font.html">Font</a></li>
-                <li><a href="Image.html">Image</a></li>
-                <li><a href="Quad.html">Quad</a></li>
+                <li><a href="/doc/love.graphics.html">love.graphics</a></li>
+                <li><a href="/doc/love.image.html">love.image</a></li>
+                <li><a href="/doc/Font.html">Font</a></li>
+                <li><a href="/doc/Image.html">Image</a></li>
+                <li><a href="/doc/Quad.html">Quad</a></li>
               </ul>
             </div>
 
             <div class="col">
               <h5>audio</h5>
               <ul>
-                <li><a href="love.audio.html">love.audio</a></li>
-                <li><a href="love.sound.html">love.sound</a></li>
-                <li><a href="Source.html">Source</a></li>
+                <li><a href="/doc/love.audio.html">love.audio</a></li>
+                <li><a href="/doc/love.sound.html">love.sound</a></li>
+                <li><a href="/doc/Source.html">Source</a></li>
               </ul>
             </div>
 
             <div class="col">
               <h5>input</h5>
               <ul>
-                <li><a href="love.input.html">love.input</a></li>
-                <li><a href="love.keyboard.html">love.keyboard</a></li>
-                <li><a href="love.joystick.html">love.joystick</a></li>
+                <li><a href="/doc/love.input.html">love.input</a></li>
+                <li><a href="/doc/love.keyboard.html">love.keyboard</a></li>
+                <li><a href="/doc/love.joystick.html">love.joystick</a></li>
               </ul>
             </div>
 
             <div class="col">
               <h5>filesystem</h5>
               <ul>
-                <li><a href="love.filesystem.html">love.filesystem</a></li>
+                <li><a href="/doc/love.filesystem.html">love.filesystem</a></li>
               </ul>
             </div>
 
@@ -88,46 +88,53 @@
   <div class="doc">
     <div class="container">
 
-      <h2>love.joystick</h2>
+      <h2>love.image</h2>
 
-      <p>Provides an interface to connected joysticks</p>
+      <p>Provides an interface to decode encoded image data.</p>
 
-      <h4>love.joystick.getJoystickCount</h4>
+      <h4>ImageData (type)</h4>
 
-      <p>Returns the number of joysticks plugged.</p>
+      <p>Raw (decoded) image data.</p>
+
+      <h4>love.image.newImageData</h4>
+
+      <p>To create an empty ImageData:</p>
 
       <code>
-<pre>num_plugged = love.joystick.getJoystickCount()</pre>
+<pre>imageData = love.image.newImageData(width, height)</pre>
       </code>
 
-      <h4>love.joystick.isDown</h4>
-
-      <p>Returns whether a button is pressed.</p>
+      <p>To an ImageData from an image file:</p>
 
       <code>
-<pre>select_pressed = love.joystick.isDown(1, RETRO_DEVICE_ID_JOYPAD_SELECT)</pre>
+<pre>imageData = love.image.newImageData(filename)</pre>
+      </code>
+                        
+      <h4>ImageData:getWidth</h4>
+      <p>Returns the width of the ImageData.</p>
+      <h4>ImageData:getHeight</h4>
+      <p>Returns the height of the ImageData.</p>
+      <h4>ImageData:getPixel</h4>
+
+      <p>Returns the color of a pixel in the ImageData.</p>
+
+      <code>
+<pre>r, g, b, a = imageData:getPixel(x, y)</pre>
       </code>
 
-      It is recommanded to define:
+      <h4>ImageData:setPixel</h4>
+
+      <p>Sets the color of a pixel in the ImageData.</p>
 
       <code>
-<pre>RETRO_DEVICE_ID_JOYPAD_B        = 1
-RETRO_DEVICE_ID_JOYPAD_Y        = 2
-RETRO_DEVICE_ID_JOYPAD_SELECT   = 3
-RETRO_DEVICE_ID_JOYPAD_START    = 4
-RETRO_DEVICE_ID_JOYPAD_UP       = 5
-RETRO_DEVICE_ID_JOYPAD_DOWN     = 6
-RETRO_DEVICE_ID_JOYPAD_LEFT     = 7
-RETRO_DEVICE_ID_JOYPAD_RIGHT    = 8
-RETRO_DEVICE_ID_JOYPAD_A        = 9
-RETRO_DEVICE_ID_JOYPAD_X        = 10
-RETRO_DEVICE_ID_JOYPAD_L        = 11
-RETRO_DEVICE_ID_JOYPAD_R        = 12
-RETRO_DEVICE_ID_JOYPAD_L2       = 13
-RETRO_DEVICE_ID_JOYPAD_R2       = 14
-RETRO_DEVICE_ID_JOYPAD_L3       = 15
-RETRO_DEVICE_ID_JOYPAD_R3       = 16</pre>
-</code>
+<pre>imageData:setPixel(x, y, r, g, b, a)</pre>
+      </code>
+
+      <h4>ImageData:getDimensions</h4>
+      <p>Returns the width and height of the ImageData.</p>
+      <code>
+<pre>width, height = imageData:getDimensions()</pre>
+      </code>
 
     </div>
   </div>

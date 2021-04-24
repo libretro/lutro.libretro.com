@@ -7,7 +7,7 @@
   <title>Lutro - Documentation</title>
   <meta name="description" content="Lutro API reference for game developers">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   
@@ -17,7 +17,7 @@
       <div class="container">
         <ul class="nav">
           <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="doc.html">Doc</a></li>
+          <li class="nav-item"><a class="nav-link" href="/doc/">Doc</a></li>
           <li class="nav-item"><a class="nav-link" href="https://github.com/libretro/libretro-lutro">Github↗</a></li>
           <li class="nav-item"><a class="nav-link" href="https://discord.gg/YXYSEQD">Discord↗</a></li>
         </ul>
@@ -38,43 +38,43 @@
             <div class="col">
               <h5>love</h5>
               <ul>
-                <li><a href="love.html">love</a></li>
+                <li><a href="/doc/love.html">love</a></li>
               </ul>
             </div>
 
             <div class="col">
               <h5>graphics</h5>
               <ul>
-                <li><a href="love.graphics.html">love.graphics</a></li>
-                <li><a href="love.image.html">love.image</a></li>
-                <li><a href="Font.html">Font</a></li>
-                <li><a href="Image.html">Image</a></li>
-                <li><a href="Quad.html">Quad</a></li>
+                <li><a href="/doc/love.graphics.html">love.graphics</a></li>
+                <li><a href="/doc/love.image.html">love.image</a></li>
+                <li><a href="/doc/Font.html">Font</a></li>
+                <li><a href="/doc/Image.html">Image</a></li>
+                <li><a href="/doc/Quad.html">Quad</a></li>
               </ul>
             </div>
 
             <div class="col">
               <h5>audio</h5>
               <ul>
-                <li><a href="love.audio.html">love.audio</a></li>
-                <li><a href="love.sound.html">love.sound</a></li>
-                <li><a href="Source.html">Source</a></li>
+                <li><a href="/doc/love.audio.html">love.audio</a></li>
+                <li><a href="/doc/love.sound.html">love.sound</a></li>
+                <li><a href="/doc/Source.html">Source</a></li>
               </ul>
             </div>
 
             <div class="col">
               <h5>input</h5>
               <ul>
-                <li><a href="love.input.html">love.input</a></li>
-                <li><a href="love.keyboard.html">love.keyboard</a></li>
-                <li><a href="love.joystick.html">love.joystick</a></li>
+                <li><a href="/doc/love.input.html">love.input</a></li>
+                <li><a href="/doc/love.keyboard.html">love.keyboard</a></li>
+                <li><a href="/doc/love.joystick.html">love.joystick</a></li>
               </ul>
             </div>
 
             <div class="col">
               <h5>filesystem</h5>
               <ul>
-                <li><a href="love.filesystem.html">love.filesystem</a></li>
+                <li><a href="/doc/love.filesystem.html">love.filesystem</a></li>
               </ul>
             </div>
 
@@ -88,21 +88,25 @@
   <div class="doc">
     <div class="container">
 
-      <h2>love.sound</h2>
+      <h2>Welcome</h2>
 
-      <p>This module is responsible for decoding sound files. It can't play the sounds, see <a href="love.audio.html">love.audio</a> for that.</p>
+      <p>Some interesting places to go from here:</p>
 
-      <h4>SoundData (type)</h4>
+      <ul>
+        <li><a href="gettingstarted.html">Getting Started</a></li>
+        <li><a href="building.html">Building Lutro</a></li>
+        <li><a href="https://github.com/libretro/libretro-lutro/blob/master/LICENSE">License</a></li>
+      </ul>
 
-      <p>Contains raw audio samples.</p>
+      <h2>Lua</h2>
 
-      <h4>love.sound.newSoundData</h4>
+      <p>Never used Lua before? It's a really cool language! This manual won't teach you Lua, but fortunately there are other good resources for that.</p>
 
-      <p>Loads a sound from an audio file. Supported files are .wav and .ogg.</p>
-
-      <code>
-<pre>soundData = newSoundData(explosion.wav)</pre>
-      </code>
+      <ul>
+        <li><a href="http://lua.org/pil">Programming in Lua (first edition)</a></li>
+        <li><a href="http://lua-users.org/wiki/TutorialDirectory">Lua-Users Tutorials</a></li>
+        <li><a href="http://www.lua.org/manual/5.1/">Lua 5.1 Reference Manual</a></li>
+      </ul>
 
     </div>
   </div>
