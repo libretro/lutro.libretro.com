@@ -88,25 +88,57 @@
   <div class="doc">
     <div class="container">
 
-      <h2>Welcome</h2>
+      <h2>love.filesystem</h2>
 
-      <p>Some interesting places to go from here:</p>
+      <p>Provides an interface to the user's filesystem.</p>
 
-      <ul>
-        <li><a href="gettingstarted.html">Getting Started</a></li>
-        <li><a href="building.html">Building Lutro</a></li>
-        <li><a href="https://github.com/libretro/libretro-lutro/blob/master/LICENSE">License</a></li>
-      </ul>
+      <h4>love.filesystem.exists</h4>
+      <p>Check whether a file or directory exists.</p>
+      <code><pre>exists = love.filesystem.exists(filename)</pre></code>
 
-      <h2>Lua</h2>
+      <h4>love.filesystem.read</h4>
+      <p>Read the contents of a file.</p>
+      <code><pre>contents, size = love.filesystem.read(name, size)</pre></code>
 
-      <p>Never used Lua before? It's a really cool language! This manual won't teach you Lua, but fortunately there are other good resources for that.</p>
+      <h4>love.filesystem.write</h4>
+      <p>Write data to a file.</p>
+      <code><pre>success, message = love.filesystem.write(name, data, size)</pre></code>
 
-      <ul>
-        <li><a href="http://lua.org/pil">Programming in Lua (first edition)</a></li>
-        <li><a href="http://lua-users.org/wiki/TutorialDirectory">Lua-Users Tutorials</a></li>
-        <li><a href="http://www.lua.org/manual/5.1/">Lua 5.1 Reference Manual</a></li>
-      </ul>
+      <h4>love.filesystem.setRequirePath</h4>
+      <p>Sets the filesystem paths that will be searched when require is called.</p>
+      <code><pre>love.filesystem.setRequirePath(paths)</pre></code>
+
+      <h4>love.filesystem.getRequirePath</h4>
+      <p>Gets the filesystem paths that will be searched when require is called.</p>
+      <code><pre>paths = love.filesystem.getRequirePath()</pre></code>
+
+      <h4>love.filesystem.load</h4>
+      <p>Loads a Lua file (but does not run it).</p>
+      <code><pre>chunk, errormsg = love.filesystem.load(name)</pre></code>
+
+      <h4>love.filesystem.setIdentity</h4>
+      <p>Sets the write directory for your game.</p>
+      <code><pre>love.filesystem.setIdentity(name)</pre></code>
+
+      <h4>love.filesystem.getUserDirectory</h4>
+      <p>Returns the path of the user's directory.</p>
+      <code><pre>path = love.filesystem.getUserDirectory()</pre></code>
+
+      <h4>love.filesystem.isDirectory</h4>
+      <p>Check whether something is a directory.</p>
+      <code><pre>isDir = love.filesystem.isDirectory(filename)</pre></code>
+
+      <h4>love.filesystem.isFile</h4>
+      <p>Check whether something is a file.</p>
+      <code><pre>isFile = love.filesystem.isFile(filename)</pre></code>
+
+      <h4>love.filesystem.createDirectory</h4>
+      <p>Creates a directory.</p>
+      <code><pre>success = love.filesystem.createDirectory(name)</pre></code>
+
+      <h4>love.filesystem.getDirectoryItems</h4>
+      <p>Returns all the files and subdirectories in the directory.</p>
+      <code><pre>files = love.filesystem.getDirectoryItems(dir)</pre></code>
 
     </div>
   </div>
