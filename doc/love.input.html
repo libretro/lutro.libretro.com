@@ -88,34 +88,32 @@
   <div class="doc">
     <div class="container">
 
-      <h2>Source (type)</h2>
+      <h2>love.input</h2>
 
-      <p>A Source represents audio you can play back.</p>
+      <p>Provides an interface to handle inputs. This is specific to lutro and doesn't exist in love2d.</p>
 
-      <h4>Source:setLooping</h4>
-      <p>Then set to true, the Source will be played continuously.</p>
-      <h4>Source:isLooping</h4>
-      <p>Returns whether the Source is looping.</p>
-      <h4>Source:isStopped</h4>
-      <p>Returns whether the Source is stopped.</p>
-      <h4>Source:pause</h4>
-      <p>Pauses the Source.</p>
-      <h4>Source:isPaused</h4>
-      <p>Returns whether the Source is paused.</p>
-      <h4>Source:isPlaying</h4>
-      <p>Returns whether the Source is playing.</p>
-      <h4>Source:setVolume</h4>
-      <p>Sets the volume of this Source.</p>
-      <h4>Source:getVolume</h4>
-      <p>Returns the volume of this Source.</p>
-      <h4>Source:seek</h4>
-      <p>Jumps to a given position in the Source.</p>
-      <h4>Source:tell</h4>
-      <p>Returns the current position in the source.</p>
-      <h4>Source:setPitch</h4>
-      <p>Sets the pitch of the source.</p>
-      <h4>Source:getPitch</h4>
-      <p>Returns the pitch of the source.</p>
+      <p>This module is deprecated. Please use <a href="/doc/love.joystick.html">love.joystick</a> instead.</p>
+
+      <h4>love.input.joypad (deprecated)</h4>
+      <p>Returns whether a joypad button is pressed.</p>
+      <code><pre>pressed = love.input.joypad(port, button)</pre></code>
+      <p>Where port starts at 1, and button is a string with one of these values:</p>
+      <code><pre>{RETRO_DEVICE_ID_JOYPAD_B,      "b"},
+{RETRO_DEVICE_ID_JOYPAD_Y,      "y"},
+{RETRO_DEVICE_ID_JOYPAD_SELECT, "select"},
+{RETRO_DEVICE_ID_JOYPAD_START,  "start"},
+{RETRO_DEVICE_ID_JOYPAD_UP,     "up"},
+{RETRO_DEVICE_ID_JOYPAD_DOWN,   "down"},
+{RETRO_DEVICE_ID_JOYPAD_LEFT,   "left"},
+{RETRO_DEVICE_ID_JOYPAD_RIGHT,  "right"},
+{RETRO_DEVICE_ID_JOYPAD_A,      "a"},
+{RETRO_DEVICE_ID_JOYPAD_X,      "x"},
+{RETRO_DEVICE_ID_JOYPAD_L,      "l1"},
+{RETRO_DEVICE_ID_JOYPAD_R,      "r1"},
+{RETRO_DEVICE_ID_JOYPAD_L2,     "l2"},
+{RETRO_DEVICE_ID_JOYPAD_R2,     "r2"},
+{RETRO_DEVICE_ID_JOYPAD_L3,     "l3"},
+{RETRO_DEVICE_ID_JOYPAD_R3,     "r3"},</pre></code>
     </div>
   </div>
 
