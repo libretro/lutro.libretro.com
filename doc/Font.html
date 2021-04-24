@@ -88,17 +88,17 @@
   <div class="doc">
     <div class="container">
 
-      <h2>Quad (type)</h2>
+      <h2>Font (type)</h2>
 
-      <p>A quadrilateral with texture coordinate information.</p>
+      <p>Defines the shape of characters that can be drawn onto the screen.</p>
+      <p>Lutro doesn't support ttf fonts, only pixel fonts. Also, unlike love2d, there is no default font.</p>
 
-      <h4>Quad:setViewport</h4>
-      <p>Sets the origin and dimensions of the Quad.</p>
-      <code><pre>Quad:setViewport(x, y, wdith, height)</pre></code>
+      <h4>Font:getWidth</h4>
+      <p>Determines the maximum width (accounting for newlines) taken by the given string.</p>
+      <code><pre>width = font:getWidth(text)</pre></code>
 
-      <h4>Quad:getViewport</h4>
-      <p>Returns the origin and dimensions of the Quad.</p>
-      <code><pre>x, y, wdith, height = Quad:getViewport()</pre></code>
+      <h4>Font:setFilter</h4>
+      <p>A stub.</p>
 
     </div>
   </div>
