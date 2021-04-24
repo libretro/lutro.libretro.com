@@ -94,6 +94,8 @@
 
       <p>To build Lutro from source, you will need <code>git</code>, a C compiler like <code>gcc</code> or <code>clang</code> and <code>make</code>.</p>
 
+      <p>On Windows, we recommand using Git Bash and mingw-w64.</p>
+
       <p>Clone the repo:</p>
 
       <code><pre>git clone https://github.com/libretro/libretro-lutro.git</pre></code>
@@ -101,6 +103,10 @@
       <p>Then change directory to libretro-lutro and build:</p>
 
       <code><pre>make</pre></code>
+
+      <p>On Windows, you might need to specify CC</p>
+
+      <code><pre>CC=gcc make</pre></code>
 
       <p>You should then find the binary in the form of a shared library named lutro_libretro.</p>
 
