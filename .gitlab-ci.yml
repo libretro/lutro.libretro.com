@@ -14,6 +14,6 @@ deploy-lutro:
     - ssh-add <(echo "$WEB_DEPLOY_KEY" | base64 -d)
     - rm -fr ./.git*
   script:
-    - rsync -a --delete $(pwd)/ ${WEB_DEPLOY_USER}@${WEB_DEPLOY_TARGET}:/var/www/html/
-    - ssh ${WEB_DEPLOY_USER}@${WEB_DEPLOY_TARGET} "chown -R $WEB_DEPLOY_USER:$WEB_DEPLOY_USER /var/www/html/"
+    - rsync -a --delete $(pwd)/ ${WEB_DEPLOY_USER}@${WEB_DEPLOY_TARGET}:/var/www/lutro/
+    - ssh ${WEB_DEPLOY_USER}@${WEB_DEPLOY_TARGET} "chown -R $WEB_DEPLOY_USER:$WEB_DEPLOY_USER /var/www/lutro/"
 
