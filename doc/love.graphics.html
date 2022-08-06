@@ -120,6 +120,9 @@
       <p>Creates a new <a href="Font.html">Font</a> by loading a specifically formatted image.</p>
       <p>From an image file:</p>
       <code><pre>font = love.graphics.newImageFont("font.png", "ABCDEFGHIJKLMNOPQRSTUVWXYZ")</pre></code>
+      <p>You can add an extra parameter to set the letter spacing:</p>
+      <code><pre>font = love.graphics.newImageFont("font.png", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 0)</pre></code>
+      <p>Note: Lutro defaults to 1 while LÖVE defaults to 0.</p>
       <p>From an <a href="ImageData.html">ImageData</a>:</p>
       <code><pre>font = love.graphics.newImageFont(imgData, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")</pre></code>
       <h4>love.graphics.newQuad</h4>

@@ -5,7 +5,7 @@
   <link rel="canonical" href="https://lutro.libretro.com" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Lutro - A portable game engine for retro games</title>
-  <meta name="description" content="Lutro is a small game engine inspired by love2d. It's basically a subset of the love2d API targeting the libretro ecosystem. Unlike its big brother love2d, lutro is software rendered to be able to run games on platforms without a GPU.">
+  <meta name="description" content="Lutro is a small game engine inspired by LÖVE. It's basically a subset of the LÖVE API targeting the libretro ecosystem. Unlike its big brother LÖVE, lutro is software rendered to be able to run games on platforms without a GPU.">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/style.css">
 </head>
@@ -129,7 +129,7 @@
 
       <p>Lutro is a 2D game framework that aims for simplicity and extreme portability.</p>
       <p>Using lutro, you can develop any kind of 2D retro games, like NES or Genesis games, and run them on a wide range of platforms through RetroArch.</p>
-      <p>Lutro makes it easy to write games by using Lua and following the love2d API.</p>
+      <p>Lutro makes it easy to write games by using Lua and following the LÖVE API.</p>
       <p>Portability is achieved through the libretro API: Lutro is just loaded as a plugin in a frontend like RetroArch which takes care of display, audio and inputs.</p>
     </div>
   </div>  
@@ -141,7 +141,7 @@
 
       <h2>Quick Start</h2>
 
-      <p>Lutro follows the love2d API. If you are already familiar with this framework, it should be easy to get started.</p>
+      <p>Lutro follows the LÖVE API. If you are already familiar with this framework, it should be easy to get started.</p>
 
       <h4>Drawing text</h4>
       
@@ -213,15 +213,15 @@ end</pre>
     <div class="container">
       <h2>Frequently Asked Questions</h2>
 
-      <h3>Why not using love2d directly?</h3>
-      <p>Lutro supports less feature than love2d, but is more portable (see the list of supported platforms). Being able to run lutro games in a libretro frontend open some new possibilities like Run-ahead, Rewind and Rollback netcode.</p>
+      <h3>Why not using LÖVE directly?</h3>
+      <p>Lutro supports less feature than LÖVE, but is more portable (see the list of supported platforms). Being able to run lutro games in a libretro frontend open some new possibilities like Run-ahead, Rewind and Rollback netcode.</p>
 
-      <h3>Why not simply porting love2d to libretro?</h3>
+      <h3>Why not simply porting LÖVE to libretro?</h3>
       <p>We wanted a software rendered version to target some platforms without a GPU.</br>
       Also we want to expose some new API inpsired by emulators like savestates.<br/>
-      The fact that love2d main loop is implemented in Lua is incompatible with retro_run from libretro, it prevents executing the game step by step.</p>
+      The fact that LÖVE main loop is implemented in Lua is incompatible with retro_run from libretro, it prevents executing the game step by step.</p>
 
-      <h3>Does lutro follow the API of love2d exactly?</h3>
+      <h3>Does lutro follow the API of LÖVE exactly?</h3>
       <p>No, some calls are not implemented at all. Only the strict minimum to be able to produce retro games have been implemented.</br>
       Some parts of the input code has also been modified to follow the libretro API more closely.</p>
 
@@ -231,8 +231,8 @@ end</pre>
       <h3>How to run lutro games?</h3>
       <p>You launch them using <a href="https://www.retroarch.com">RetroArch</a> or <a href="https://ludo.libretro.com">Ludo</a> or any other libretro frontend. Lutro works like an emulator, and your game is the ROM.<br />See <a href="/doc/gettingstarted.html">Getting started</a>.</p>
 
-      <h3>Can I port love2d games to lutro?</h3>
-      <p>Yes, but it's not very easy. A few games have been ported from love2d, like <a href="https://github.com/libretro/lutro-sienna">Sienna</a> or <a href="https://github.com/libretro/lutro-iyfct">In Your Face City Trains</a>.</p>
+      <h3>Can I port LÖVE games to lutro?</h3>
+      <p>Yes, but it's not very easy. A few games have been ported from LÖVE, like <a href="https://github.com/libretro/lutro-sienna">Sienna</a> or <a href="https://github.com/libretro/lutro-iyfct">In Your Face City Trains</a>.</p>
 
     </div>
   </div>
