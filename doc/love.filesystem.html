@@ -139,6 +139,8 @@
 
       <h4>love.filesystem.getDirectoryItems</h4>
       <p>Returns all the files and subdirectories in the directory.</p>
+      <p>Note that opposed to the standard LÕVE2D <code>getDirectoryItems</code> implementation, the sequence returned by this function is 0-indexed. See <a href="https://github.com/libretro/libretro-lutro/pull/285">this issue</a> for more info and a workaround.</p>
+      
       <code><pre>files = love.filesystem.getDirectoryItems(dir)</pre></code>
 
     </div>
