@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="https://lutro.libretro.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Lutro - Documentation</title>
+  <meta name="description" content="Lutro API reference for game developers">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  
+  <div>
+    <!-- Top Nav -->
+    <div class="topnav">
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/doc/">Doc</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/libretro/libretro-lutro">Github↗</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://forums.libretro.com/c/libretro/lutro/50">Forums↗</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://discord.gg/9rFPxE8Xuw">Discord↗</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <h1>Lutro - Documentation</h1>
+
+        <div class="download">
+
+          <h4>Modules</h4>
+
+          <div class="row">
+
+            <div class="col">
+              <h5>love</h5>
+              <ul>
+                <li><a href="/doc/love.html">love</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>graphics</h5>
+              <ul>
+                <li><a href="/doc/love.graphics.html">love.graphics</a></li>
+                <li><a href="/doc/love.image.html">love.image</a></li>
+                <li><a href="/doc/Font.html">Font</a></li>
+                <li><a href="/doc/Image.html">Image</a></li>
+                <li><a href="/doc/Quad.html">Quad</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>audio</h5>
+              <ul>
+                <li><a href="/doc/love.audio.html">love.audio</a></li>
+                <li><a href="/doc/love.sound.html">love.sound</a></li>
+                <li><a href="/doc/Source.html">Source</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>input</h5>
+              <ul>
+                <li><a href="/doc/love.input.html">love.input</a></li>
+                <li><a href="/doc/love.keyboard.html">love.keyboard</a></li>
+                <li><a href="/doc/love.joystick.html">love.joystick</a></li>
+              </ul>
+            </div>
+
+            <div class="col">
+              <h5>filesystem</h5>
+              <ul>
+                <li><a href="/doc/love.filesystem.html">love.filesystem</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+  </div> 
+
+  <a id="doc"></a>
+  <div class="doc">
+    <div class="container">
+
+      <h2>love.keyboard</h2>
+
+      <p>Provides an interface to the keyboard exposed by the libretro frontend.</p>
+
+      <p>Keyboard availability depends on the frontend and platform. Lutro polls libretro keyboard state once per frame and uses libretro key codes as scancodes.</p>
+
+      <h4>love.keyboard.isDown</h4>
+
+      <p>Returns whether at least one of the requested keys is pressed.</p>
+
+      <code>
+<pre>pressed = love.keyboard.isDown("space")
+pressed = love.keyboard.isDown("space", "a")</pre>
+      </code>
+
+      <p>Key names follow Lutro's libretro key map. Common values include letters, digits, arrows, function keys and modifiers:</p>
+
+      <code>
+<pre>"a".."z", "0".."9"
+"space", "return", "escape", "tab", "backspace"
+"up", "down", "left", "right"
+"f1".."f15"
+"lshift", "rshift", "lctrl", "rctrl", "lalt", "ralt"</pre>
+      </code>
+
+      <h4>love.keyboard.getScancodeFromKey</h4>
+
+      <p>Returns the libretro key code for a key name.</p>
+
+      <code>
+<pre>scancode = love.keyboard.getScancodeFromKey("f")</pre>
+      </code>
+
+      <p>In Lutro, scancodes are numeric libretro keyboard constants. They are useful when handling keyboard callbacks or when interoperating with libretro-specific code.</p>
+
+      <h4>love.keyboard.getKeyFromScancode</h4>
+
+      <p>Returns the key name for a libretro key code.</p>
+
+      <code>
+<pre>key = love.keyboard.getKeyFromScancode(scancode)</pre>
+      </code>
+
+      <h4>love.keypressed</h4>
+
+      <p>This callback is called when a key is pressed.</p>
+
+      <code>
+<pre>function love.keypressed(key, scancode, isrepeat)
+  print("pressed", key, scancode)
+end</pre>
+      </code>
+
+      <h6>Arguments:</h6>
+      <dl>
+        <dt>key</dt><dd>The key name.</dd>
+        <dt>scancode</dt><dd>The numeric libretro key code.</dd>
+        <dt>isrepeat</dt><dd>Always <code>false</code> for now.</dd>
+      </dl>
+
+      <h4>love.keyreleased</h4>
+
+      <p>This callback is called when a key is released.</p>
+
+      <code>
+<pre>function love.keyreleased(key, scancode, isrepeat)
+  print("released", key, scancode)
+end</pre>
+      </code>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container text-center">
+      Lutro is a project of <a href="https://github.com/libretro">libretro</a>. Fork it on <a href="https://github.com/libretro/libretro-lutro">github</a>! This website is not using cookies.
+    </div>
+  </footer>
+</body>
+</html>
